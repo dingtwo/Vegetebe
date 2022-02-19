@@ -1,0 +1,120 @@
+:root {
+  --calendar-day-color: var(--color-blue-B600);
+  --color-blue-B600: #183dd1;
+  --color-red-R500: #ff6b60;
+}
+#go-to-original {
+  cursor: pointer;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 2;
+  }
+}
+
+.changes {
+  display: grid;
+  gap: 1.5em;
+  justify-content: center;
+  grid-column: standard;
+  list-style: none;
+  font-family: var(--font-headline);
+  z-index: 2;
+}
+
+@media (min-width: 37rem) and (max-width: 68.99rem) {
+  .changes {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  }
+}
+
+@media (min-width: 69rem) {
+  .changes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.changes-item {
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 4px solid var(--calendar-day-color);
+  --calendar-day-color: var(--color-blue-B600);
+  transition: all .5s ease-in-out;
+}
+
+.changes-item:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1)
+}
+
+.changes-item.today {
+  --calendar-day-color: var(--color-red-R500);
+}
+
+.changes-item span {
+  color: #fff;
+  padding: 0.5em;
+  display: grid;
+  place-content: center;
+  background-color: var(--calendar-day-color);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.changes-item div {
+  padding: 1em;
+  padding-right: 0.9em;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 68.99rem) {
+  .changes-item div {
+    min-height: 120px;
+  }
+}
+
+@media (min-width: 69rem) {
+  .changes-item div {
+    min-height: 180px;
+  }
+}
+
+.changes-item p {
+  color: var(--color-gray-L800);
+  font-weight: 700;
+}
+
+.changes-item p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.changes-item p.mb0 {
+  margin-bottom: 0;
+}
+
+.changes-item p .call-to-action {
+  display: inline-block;
+  color: inherit;
+  font-weight: 400;
+  font-size: 90%;
+  -webkit-text-decoration-color: var(--calendar-day-color);
+  text-decoration-color: var(--calendar-day-color);
+}
+
+.changes-item p .call-to-action > svg {
+  fill: var(--calendar-day-color);
+}
+
+.changes-item .call-to-action-button {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
