@@ -11507,6 +11507,7 @@ textarea.form-control-lg {
   list-style: none;
   font-family: var(--font-headline);
   z-index: 2;
+  padding: 0;
 }
 
 @media (min-width: 37rem) and (max-width: 68.99rem) {
@@ -11523,8 +11524,8 @@ textarea.form-control-lg {
   max-width: 300px;
   background-color: #fff;
   border-radius: 8px;
-  border: 4px solid var(--calendar-day-color);
-  --calendar-day-color: var(--color-blue-B600);
+  border: 4px solid #1e6f5c;
+  --calendar-day-color: #1e6f5c;
   transition: all 0.5s ease-in-out;
 }
 
